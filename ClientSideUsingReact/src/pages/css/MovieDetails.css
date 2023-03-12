@@ -1,0 +1,18 @@
+
+.poster_details_row{
+    padding: 20px;
+    background: linear-gradient(to right,black ,rgb(83, 82, 82));
+}
+
+
+.movie_overview_row{
+    padding: 20px;
+}
+
+.movie_production_row{
+    padding: 20px;
+}
+
+.similar_movies_row{
+    /* padding: 10px; */
+}

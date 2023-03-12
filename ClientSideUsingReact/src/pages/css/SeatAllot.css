@@ -1,0 +1,36 @@
+.seatallot_container button {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #333;
+  }
+  
+  .seatallot_container button:hover {
+    cursor: pointer;
+  }
+  
+ .seatallot_container button.selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .seatallot_container button[disabled] {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+  }
+  
+  .seatallot_container p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+  
+  .seatallot_container h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px;
+  }
+  

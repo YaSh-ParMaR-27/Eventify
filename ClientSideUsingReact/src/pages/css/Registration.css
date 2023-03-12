@@ -1,0 +1,92 @@
+
+/* .form_input:focus{
+    box-shadow: none;
+} */
+
+.register_container .form_input{
+    border: 2px solid #007dff;
+    border-radius: 10px;
+    background-color: inherit;
+}
+
+.register_container .form_input:focus{
+   background-color: inherit;
+}
+.register_container .form_input::placeholder{
+    text-align: center;
+}
+
+
+.register_container .btn{
+    background-color: #007dff;
+    border-radius: 50px;
+    width: 33.3%;
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.register_container .formContent .btn:hover{
+    background-color: #a6c9ff;
+    color: white;
+}
+
+.register_container .formContent{
+    /* width: 60%; */
+    border-radius: 15px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#f4faff,#b9dcfb);
+    /* margin: auto; */
+}
+
+.register_container .formContent .form-control{
+    width: 90%;
+}
+
+.register_container .formContent h1{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.register_container .formContent .formAnchor{
+    color: #007dff;
+    font-weight: 600;
+}
+
+.register_container .forFormOuterBorder{
+    width: 80%;
+    margin: auto;
+   
+    border-left: 2px solid #007dff;
+    border-top: 2px solid #007dff;
+    border-radius: 10px;
+    
+    padding: 10px;
+    
+}
+
+
+@media only screen and (max-width: 576px) {
+    
+    .register_container .formContent .form-control{
+        width: 100%;
+    }
+
+    .register_container .btn{
+        width: 50%;
+    }
+
+    .register_container  .form_container{
+        padding: 0px;
+
+    }
+    
+    .register_container .formContent{
+        height: 60vh;
+       
+        
+    }
+
+  }

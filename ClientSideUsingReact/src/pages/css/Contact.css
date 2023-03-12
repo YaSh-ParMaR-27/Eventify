@@ -1,0 +1,66 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
+.contact_container{ 
+    background: radial-gradient(#f4faff,#b9dcfb,#b9dcfb);
+}
+
+.contact_container .forOuterBorder{
+    width: 40%;
+    margin: auto;
+    padding: 8px 8px;
+
+    border-left: 2px solid #007dff;
+    border-top: 2px solid #007dff;
+    border-radius: 10px;
+        
+}
+
+
+.contact_container .forOuterBorder .form-control{
+    border: 2px solid #007dff;
+    border-radius: 10px;
+    background-color: inherit;
+    
+}
+
+
+.contact_container .forOuterBorder h1{
+    font-weight: 600;
+    /* color: #007dff; */
+}
+
+.contact_container .forOuterBorder .btn{
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 1200px) {
+    .contact_container .forOuterBorder{
+        width:50%;
+    }        
+  }
+@media only screen and (max-width: 992px) {
+    .contact_container .forOuterBorder{
+        width:60%;
+    }        
+  }
+  @media only screen and (max-width: 768px) {
+      .contact_container .forOuterBorder{
+          width:60%;
+      }        
+    }
+
+@media only screen and (max-width: 576px) {
+    .contact_container .contact-container{
+        margin-top: 2.8rem;
+    }
+    .contact_container .forOuterBorder{
+        width: 90%;
+    }        
+  }
+ 
+ 
+ 
+  

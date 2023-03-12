@@ -1,0 +1,51 @@
+.movie_card {
+    width: 95%;
+    margin: 0 auto;
+    height: fit-content;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid green
+}
+
+.movie_card .slick-slide>div {
+    margin: 0 10px;
+    height: 65vh;
+    width: 90%;
+}
+
+.movie_card .slick-list {
+    margin: 0 -10px;
+}
+
+.movie_card .slick-next{
+    right: -10px;
+}
+.movie_card .slick-prev{
+    left: -20px;
+    z-index: 100;
+}
+
+.movie_card .slick-prev, .slick-next { 
+    top: 45%;
+}
+   
+
+.movie_card .slick-prev:before,
+.slick-next:before {
+    font-family: 'slick';
+    font-size: 25px;
+    line-height: 0;
+    opacity: .75;
+    color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    .movie_card .slick-prev:before,
+    .slick-next:before {
+        display: none;
+    }
+  }
+
+
+  

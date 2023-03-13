@@ -1,0 +1,56 @@
+.eventCard {
+    width: 95%;
+    margin: 0 auto;
+    height: fit-content;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    padding: 8px;
+    border: 2px solid red;
+}
+
+.eventCard .slick-slide{
+    border: 1px solid blueviolet;
+    max-height: 10rem;
+}
+
+.eventCard .slick-slide>div {
+    margin: 0 10px;
+    height: 65vh;
+    width: 90%;
+}
+
+.eventCard .slick-list {
+    margin: 0 -10px;
+}
+
+.eventCard .slick-next{
+    right: -10px;
+}
+.eventCard .slick-prev{
+    left: -20px;
+    z-index: 100;
+}
+
+.eventCard .slick-prev, .slick-next { 
+    top: 45%;
+}
+   
+
+.eventCard .slick-prev:before,
+.slick-next:before {
+    font-family: 'slick';
+    font-size: 25px;
+    line-height: 0;
+    opacity: .75;
+    color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    .eventCard .slick-prev:before,
+    .slick-next:before {
+        display: none;
+    }
+  }
+
+
+  

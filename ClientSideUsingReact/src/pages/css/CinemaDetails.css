@@ -1,0 +1,14 @@
+.cinema_details .show_date{
+    border: 1px solid white;
+    width: fit-content;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.cinema_details .time_btn{
+    border: 1px solid black;
+    padding: 4px;
+}
+.cinema_details .time_btn:hover{
+    background-color: rgb(211, 223, 240);
+}

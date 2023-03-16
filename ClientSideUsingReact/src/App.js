@@ -17,6 +17,7 @@ import Logout from './pages/Logout';
 import CinemaDetails from './pages/CinemaDetails';
 import ApiCalls from './dataStore/ApiCalls';
 import SeatAllot from './pages/SeatAllot';
+import EventDetails from './pages/EventDetails';
 
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="movies/:id/cinemadetails" element={<CinemaDetails/>}/>
           <Route path="movies/:id/cinemadetails/seatallot" element={<SeatAllot/>}/>
           <Route path="/events" element={<Events/>}/>
+          <Route path="/events/eventdetails" element={<EventDetails/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/login" element={<Login/>}/>

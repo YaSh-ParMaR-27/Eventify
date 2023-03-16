@@ -11,7 +11,7 @@ export default function BuyTicket() {
   console.log(location);
   return (
     <>
-      <div className="container-fluid cinema_details">
+      <div className="container-fluid cinema_detai" >
         <div className="row bg-black">
           <div className="col p-3 text-white ">
             <p>{location.state.title}</p>

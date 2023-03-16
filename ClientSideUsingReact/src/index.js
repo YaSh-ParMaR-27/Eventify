@@ -6,6 +6,8 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+import { NextUIProvider } from '@nextui-org/react';
+
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
@@ -17,7 +19,9 @@ root.render(
  
     <DataLayer  initialState={initialState}  reducer={reducer}>
       <BrowserRouter>
-        <App />
+        <NextUIProvider>
+          <App />
+        </NextUIProvider>
       </BrowserRouter>
     </DataLayer>
   

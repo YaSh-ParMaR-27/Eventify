@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './css/Contact.css'
-
+import contact_img from "../assets/undraw_contact_us_re_4qqt (1).svg";
 export default function Contact() {
 
   const [user , setUser] = useState({
@@ -38,20 +38,25 @@ export default function Contact() {
 
   return (
     <>
-      <div className="container-fluid contact_container h-[92vh] p-4">
+      <div className="container-fluid contact_container p-4">
         <div className="row justify-center align-middle ">
           <div className="col-md-10">
-            <div className="forOuterBorder">
-              
-              <form method='POST'  className="form-group p-4 rounded-lg flex flex-col  gap-2 shadow-lg">
-                  <h1 className='text-xl text-center'>Contact Us</h1>
+         
+            <div className="forOuterBorder p-4 ">
+            <div className='left-side-form p-4 '>
+              {/* <h2>Contact Us</h2> */}
+    
+              <img className='contact-page-img m-auto' src={contact_img} />
+            </div>
+              <form method='POST'  className="form-group p-4 rounded-lg w-50 flex flex-col  gap-2 ">
+                  <h1 className='contact-heading text-center'>Get in touch with us!</h1>
 
                    <input type="text" className="form-control" name='name' value={user.name}  onChange={handleUserInput}  id="InputName" placeholder="Name"/>
                    <input type="email" className="form-control" name='email' value={user.email}  onChange={handleUserInput}  id="InputEmail" placeholder="Email"/>
                    <input type="text" className="form-control" id="InputSubject" value={user.subject}  onChange={handleUserInput} name='subject' placeholder="Subject"/>
                    <textarea  className='form-control' id="InputTextarea" name='message' value={user.message} onChange={handleUserInput}  placeholder='Message' cols="30" rows="6"></textarea>
                         
-                   <button type='submit' onClick={sendDataToServer} className='btn'>Submit </button>
+                   <button type='submit' onClick={sendDataToServer} className='contact-submit'>Submit </button>
               </form>
             </div>
           </div>
@@ -60,3 +65,4 @@ export default function Contact() {
     </>
   )
 }
+

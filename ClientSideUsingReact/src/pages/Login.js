@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 import loginImg from "../assets/loginImg.jpg";
 import { CgProfile } from "react-icons/cg";
+import { useDataLayerValue } from "../dataStore/DataLayer";
 import "./css/Login.css";
 
 export default function Login() {
+  const [state, dispatch] = useDataLayerValue();
 
   const navigate = useNavigate();
 
@@ -23,35 +25,37 @@ export default function Login() {
       body: JSON.stringify({ email, password }),
     });
 
-    if(res.status === 401){
-      const data = await res.json();
-      alert(data.error);
-      // console.log(data.error)
+    const data = await res.json();
+
+    if (data.status === 400 || !data) {
+      window.alert("Invalid Credentials!!");
+    } else {
+      dispatch({ type: "USER", payload: true });
+      window.alert("Login Successfull");
+
+      navigate("/");
     }
-
-    else {
-
-        window.alert("Login Successfull");
-
-        navigate("/");
-      }
-    };
+  };
 
   return (
     <>
-      <div className="login_container container  h-[90vh]   ">
-        <div className="row pt-4 pt-lg-0 mt-16 md:mt-12 lg:mt-4">
-          <div className=" col-md-6 col-lg-5  md:block hidden ">
+    <div className="form-container">
+
+    
+      <div className="login_container">
+        <div className="row d-flex justify-content-center">
+          <div className=" col-md-6 col-lg-5 d-flex  md:block hidden ">
             <img src={loginImg} className="img-fluid w-100 h-auto" alt="" />
           </div>
           <div className="col-md-6 col-lg-7 flex flex-col justify-center form_container">
             <div className="forFormOuterBorder">
               <form
                 method="POST"
-                className="form-group formContent flex flex-col gap-2 shadow-lg"
+                className="form-group formContent flex flex-col gap-2"
               >
-                <CgProfile style={{ color: "007dff", fontSize: "80px" }} />
-                <h1 className=" text-lg-2xl">Login to your account</h1>
+                {/* <CgProfile style={{ color: "007dff", fontSize: "80px" }} /> */}
+                <p className="login-heading my-2">Login Now </p>
+              <p className="text-secondary m-2">Login to you accout to access.</p>
 
                 <input
                   type="email"
@@ -79,13 +83,17 @@ export default function Login() {
                 </button>
                 <hr />
 
-                <Link to="/registration" className="formAnchor">
+                <Link to="/registration" className="login-other-links my-3">
                   Don't have an account? SignUp
                 </Link>
+
+                {/* ADD FORGOT PASSWORD LINK HERE  */}
+                <a href="#" className="login-other-links">Forgot Password</a>
               </form>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

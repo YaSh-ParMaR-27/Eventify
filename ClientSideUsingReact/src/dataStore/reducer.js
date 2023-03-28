@@ -3,6 +3,7 @@ export const initialState ={
     popularMovies:[],
     upcomingMovies:[],
     topRatedMovies:[],
+    eventData : [],
 };
 
 const reducer = (state , action)=>{
@@ -32,6 +33,11 @@ const reducer = (state , action)=>{
             return{
                 ...state,
                 upcomingMovies:action.payload
+            }
+        case 'SET_EVENT_DATA':
+            return{
+                ...state,
+                eventData:action.payload
             }
         default:
             return state;

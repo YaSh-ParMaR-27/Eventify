@@ -1,0 +1,41 @@
+.event_form_container h1{
+    text-align: center;
+    font-size: 32px;
+    text-decoration: underline;
+}
+
+.event_form_container .event_form .e_input{
+    border: 2px solid rgb(109, 108, 107);
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+}
+.event_form_container .event_form{
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 70%;
+    margin: 10px auto;
+}
+
+.event_form_container .event_form .event_submit_btn{
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 3px 8px;
+}
+.event_form_container .event_form .event_submit_btn:hover{
+    background-color: grey;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .event_form_container .event_form .e_input{
+        width: 60%;       
+    }
+    .event_form_container .event_form{
+        width: 70%;
+    }
+  }

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import aboutusImg from '../../assets/aboutus.svg'
 import FaqImg from '../../assets/faq.svg'
 import FeedbackImg from '../../assets/feedback.svg'
@@ -20,28 +21,28 @@ export default function Footer() {
                         <div className='footerBigIcons'>
                             <img width={50} src={FaqImg} alt="" />
                         </div>
-                        <h4>FAQ</h4>
+                        <Link to="/"><h4>FAQ</h4></Link>      
                     </div>
 
                     <div className='footerIconWithText'>
                         <div className='footerBigIcons'>
                             <img width={50} src={aboutusImg} alt="" />
                         </div>
-                        <h4>ABOUT US</h4>
+                        <Link to="/about"><h4>ABOUT US</h4></Link>
                     </div>
                     
                     <div className='footerIconWithText'>
                         <div className='footerBigIcons'>
                             <img width={50} src={FeedbackImg} alt="" />
                         </div>
-                        <h4>FEEDBACK</h4>
+                        <Link to="/contact"><h4 >FEEDBACK</h4></Link>
                     </div>
 
                     <div className='footerIconWithText'>
                         <div className='footerBigIcons '>
                             <img className='footerNewsletter' width={50} src={NewsletterImgLight} alt="" />
                         </div>
-                        <h4>NEWSLETTER</h4>
+                        <Link to="/"><h4>NEWSLETTER</h4></Link>
                     </div>
                </div>
             </div>
@@ -49,25 +50,25 @@ export default function Footer() {
             <div className="row footerlinksContainer flex flex-col sm:flex-row justify-around">
                 <div className="col sm:col-3 lg:ml-32 flex flex-col">
                     <h3 className='text-2xl font-medium'>Browse</h3>
-                    <p><a href="">Recommended Movies</a></p>
-                    <p><a href="">Coming Soon</a></p>
-                    <p><a href="">Events</a></p>
+                    <Link to="/movies"><p>Recommended Movies</p></Link>
+                    <Link to="/movies"><p>Coming Soon</p></Link>
+                    <Link to="/movies"><p>Events</p></Link>
                 </div>
 
                 <div className="col sm:col-3 flex flex-col">
                     <h3 className='text-2xl font-medium'>Links</h3>
-                    <p><a href="">Login</a></p>
-                    <p><a href="">Register</a></p>
-                    <p><a href="">Contact Us</a></p>
+                    <Link to="/login"><p>Login</p></Link>
+                    <Link to="/register"><p>Register</p></Link>
+                    <Link to="/contact"><p>Contact Us</p></Link>
                     
                 </div>
 
                 <div className="col sm:col-3 flex flex-col">
                     <h3 className='text-2xl font-medium'>General</h3>
-                    <p><a href="">About Us</a></p>
-                    <p><a href="">FAQs</a></p>
-                    <p><a href="">Feedback</a></p>
-                    <p><a href=""></a>Terms & conditions</p>
+                    <Link to="/about"><p>About Us</p></Link>
+                    <Link to="/"><p>FAQs</p></Link>
+                    <Link to="/contact"><p>Feedback</p></Link>
+                    <Link to="/"><p>Terms & conditions</p></Link>
                 </div>
             </div>
 
@@ -75,10 +76,10 @@ export default function Footer() {
                 <hr className='socialLine'/>
                 <div className="col flex justify-center p-1">
                     <div className="col-8 flex justify-center gap-3">
-                        <InstaIcon  htmlColor='grey' fontSize='large'/>
-                        <FbIcon htmlColor='grey' fontSize='large'/>
-                        <LinkedinIcon htmlColor='grey' fontSize='large'/>
-                        <TwitterIcon htmlColor='grey' fontSize='large'/>
+                       <Link to="/"><InstaIcon className='socialIcons' htmlColor='grey' fontSize='large'/></Link>
+                       <Link to="/"><FbIcon className='socialIcons' htmlColor='grey' fontSize='large'/></Link>
+                       <Link to="/"><LinkedinIcon className='socialIcons' htmlColor='grey' fontSize='large'/></Link>
+                       <Link to="/"> <TwitterIcon className='socialIcons' htmlColor='grey' fontSize='large'/></Link>      
                     </div>
                 </div>
                 <hr  className='socialLine'/>

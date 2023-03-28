@@ -23,7 +23,7 @@ export default function Home() {
       <Carousel slides={slides} />
       <EventCards/>
       <DesignedPoster/>
-      <div className="movie_card">
+      <div className="home_movie_card">
         <h1 className='text-2xl mb-2 font-bold'> Recomended Movies</h1>
         <Slider {...settings}>
             {state.popularMovies.map((movie)=>

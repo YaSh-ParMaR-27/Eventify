@@ -10,6 +10,9 @@
     justify-content: center;
     align-items: center;
 }
+.footer .footerIconContainer .footerIconWithText h4:hover{
+  color: #85b8ba;
+}
 
 .footer .footerBigIcons{
     border: 1px solid gray;
@@ -19,7 +22,7 @@
 }
 
 .footer .footerBigIcons:hover{
-    border-color: skyblue;
+    border-color:#85b8ba;
 }
 
 .footer  .footerNewsletter{
@@ -43,9 +46,15 @@
     letter-spacing: 2px;
     margin: 2px;
 }
+.footer .footerlinksContainer p:hover{
+    color: #85b8ba;
+}
 
 .footer .socialLinksRow{
     background-color: #2f2e2e;
+}
+.footer .socialLinksRow .socialIcons:hover{
+    color: #85b8ba;
 }
 .footer .socialLinksRow p{ 
     color: rgb(180, 180, 180);

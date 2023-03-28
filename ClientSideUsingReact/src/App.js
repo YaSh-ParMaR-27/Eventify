@@ -18,6 +18,8 @@ import CinemaDetails from './pages/CinemaDetails';
 import ApiCalls from './dataStore/ApiCalls';
 import SeatAllot from './pages/SeatAllot';
 import EventDetails from './pages/EventDetails';
+import EventCheckout from './pages/EventCheckout';
+import EventForm from './pages/EventForm';
 
 
 export default function App() {
@@ -28,12 +30,14 @@ export default function App() {
       
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/fillevent" element={<EventForm/>}/>
           <Route path="/movies" element={<Movies/>}/>
           <Route path="movies/:id" element={<MoviesDetails/>}/>
           <Route path="movies/:id/cinemadetails" element={<CinemaDetails/>}/>
           <Route path="movies/:id/cinemadetails/seatallot" element={<SeatAllot/>}/>
           <Route path="/events" element={<Events/>}/>
-          <Route path="/events/eventdetails" element={<EventDetails/>}/>
+          <Route path="/events/eventdetails/:id" element={<EventDetails/>}/>
+          <Route path='/events/eventdetails/checkout' element={<EventCheckout/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/login" element={<Login/>}/>

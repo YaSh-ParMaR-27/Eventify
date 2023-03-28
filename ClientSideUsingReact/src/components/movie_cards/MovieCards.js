@@ -1,13 +1,13 @@
 import React, { useEffect, useState }  from 'react';
 import {Link} from 'react-router-dom'
-import Star from '@mui/icons-material/Star';
 //react-skeleton-loading
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import 'react-loading-skeleton/dist/skeleton.css'
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 
 function MovieCards({movie}) {
-  // console.log(movie);
+  console.log(movie);
   const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -39,9 +39,7 @@ function MovieCards({movie}) {
                 <img className="w-full h-full" src={`https://image.tmdb.org/t/p/original${movie?movie.poster_path:""}`} alt="Sunset in the mountains"/>
             </div>
             <div className=" bg-black text-white flex justify-around align-middle rounded-b-lg">
-                <span><Star color='error'/></span>
-                <span >{movie.vote_average}/10</span>
-                <span>{movie.vote_count} Votes</span>
+                <span className='flex align-middle'><ThumbUpIcon color='success' className='mx-3'/>{movie.vote_average}/10</span>
             </div>
           </div> 
         </Link>

@@ -114,3 +114,10 @@ export const settings = {
 };
 
 
+export const  navLinks = [
+  { name: "Home", link: "/" },
+  { name: "Movies", link: "/movies" },
+  { name: "Events", link: "/events" },
+  { name: "About Us", link: "/about" },
+  { name: "Contact Us", link: "/contact" },
+];

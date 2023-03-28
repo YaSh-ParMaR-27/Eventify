@@ -18,7 +18,7 @@ const Home = () => {
     const [state , dispatch] = useDataLayerValue();    
     return (
         <>
-            <div className="poster mt-2 mx-2 ">
+            <div className="movies_container poster mt-2 mx-2 ">
                 <Carousel
                     showThumbs={false}
                     autoPlay={true}
@@ -42,7 +42,7 @@ const Home = () => {
                                             <i className="fas fa-star" />{" "}
                                         </span>
                                     </div>
-                                    <div className="posterImage__description sm:visible">{movie ? movie.overview : ""}</div>
+                                    <div className="posterImage__description ">{movie ? movie.overview : ""}</div>
                                 </div>
                             </Link>
                         ))

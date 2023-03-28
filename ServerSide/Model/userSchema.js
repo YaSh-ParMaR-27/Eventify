@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+//schema for user registration
 const userSchema = new mongoose.Schema({
     name:{
         type : String,
@@ -33,6 +34,8 @@ const userSchema = new mongoose.Schema({
     ]
 })
 
+
+//scchema for Contact form
 const contactUsUserSchema = new mongoose.Schema({
     name:{
         type : String,
@@ -57,6 +60,46 @@ const contactUsUserSchema = new mongoose.Schema({
 })
 
 
+//Schema for EVENTS 
+const eventSchema = new mongoose.Schema({
+    eventName :{
+        type : String,
+        required:true
+    },
+    date :{
+        type : String,
+        required:true
+    },
+    createdAt: {
+        type: String,  
+        default: Date.now 
+    },
+    price:{
+        type: Number,
+        required:true
+    },
+    genre:{
+        type : String,
+        required:true
+    },
+    venue:{
+        type:String,
+        required : true
+    },
+    Img : {
+        type: Buffer, // casted to MongoDB's BSON type: binData
+        required: true
+    },
+    about:{
+        type:String,
+        required:true
+    },
+    registeredUser : {
+        type:Array
+    
+    }
+})
+
 
 //Hashing the password
 userSchema.pre('save',async function(next){
@@ -79,9 +122,12 @@ userSchema.methods.generateAuthToken = async function(){
     }
 }
 
+
 //collection creation
 const RegisteredUserData = mongoose.model('Registration',userSchema);
 const ContactUserData = mongoose.model('Contact',contactUsUserSchema);
+const EventData = mongoose.model('Event',eventSchema);
 
-module.exports = {RegisteredUserData,ContactUserData};
+
+module.exports = {RegisteredUserData,ContactUserData,EventData};
 

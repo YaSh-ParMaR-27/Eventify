@@ -1,66 +1,100 @@
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
-.contact_container{ 
-    background: radial-gradient(#f4faff,#b9dcfb,#b9dcfb);
+.contact-page-img {
+    width: 320px;
+
 }
 
-.contact_container .forOuterBorder{
-    width: 40%;
+.left-side-form.p-4 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+form .form-group {
+    width: 50%;
+
+}
+
+.contact-heading {
+    font-size: 24px !important;
+    font-weight: 500;
+    margin: 4px;
+}
+
+.contact-submit {
+    position: relative;
+    display: inline-block;
+    margin: 15px auto;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #45495B;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #45495B;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #45495B;
+    width: 50%;
+}
+
+.contact-submit:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #919ac1;
+}
+
+.contact-submit:active {
+    transform: scale(0.9);
+}
+
+.forOuterBorder {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #e3e9f1;
+    border-radius: 8px;
+}
+
+form .form-control {
+    border: 1px solid #151E45;
+    margin: 4px 0;
+    border-radius: 12px;
+    background-color: #e3e9f1;
+    padding: 8px;
+}
+
+form .form-control:focus {
+    box-shadow: 0 0 0 0.18rem #a0aad3;
+    background-color: #e3e9f1;
+}
+
+.contact_container .forOuterBorder {
     margin: auto;
     padding: 8px 8px;
 
-    border-left: 2px solid #007dff;
-    border-top: 2px solid #007dff;
-    border-radius: 10px;
-        
+}
+
+.contact_container {
+    background-color: #F5F7FF;
 }
 
 
-.contact_container .forOuterBorder .form-control{
-    border: 2px solid #007dff;
-    border-radius: 10px;
-    background-color: inherit;
-    
-}
-
-
-.contact_container .forOuterBorder h1{
-    font-weight: 600;
-    /* color: #007dff; */
-}
-
-.contact_container .forOuterBorder .btn{
-    width: 40%;
-    margin: auto;
-    margin-top: 10px;
-}
-@media only screen and (max-width: 1200px) {
-    .contact_container .forOuterBorder{
-        width:50%;
-    }        
-  }
-@media only screen and (max-width: 992px) {
-    .contact_container .forOuterBorder{
-        width:60%;
-    }        
-  }
-  @media only screen and (max-width: 768px) {
-      .contact_container .forOuterBorder{
-          width:60%;
-      }        
-    }
 
 @media only screen and (max-width: 576px) {
-    .contact_container .contact-container{
-        margin-top: 2.8rem;
+
+    .forOuterBorder {
+        flex-direction: column;
     }
-    .contact_container .forOuterBorder{
-        width: 90%;
-    }        
-  }
- 
- 
- 
-  
+
+    .left-side-form {
+        width: 100% !important;
+    }
+
+    form.form-group {
+        width: 100% !important;
+    }
+}

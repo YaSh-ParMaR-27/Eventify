@@ -25,17 +25,19 @@ export default function Login() {
       body: JSON.stringify({ email, password }),
     });
 
-    const data = await res.json();
-
-    if (data.status === 400 || !data) {
-      window.alert("Invalid Credentials!!");
-    } else {
-      dispatch({ type: "USER", payload: true });
-      window.alert("Login Successfull");
-
-      navigate("/");
+    if(res.status === 401){
+      const data = await res.json();
+      alert(data.error);
+      // console.log(data.error)
     }
-  };
+
+    else {
+        dispatch({ type: "USER", payload: true });
+        window.alert("Login Successfull");
+
+        navigate("/");
+      }
+    };
 
   return (
     <>

@@ -3,11 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 import loginImg from "../assets/loginImg.jpg";
 import { CgProfile } from "react-icons/cg";
-import { useDataLayerValue } from "../dataStore/DataLayer";
 import "./css/Login.css";
 
 export default function Login() {
-  const [state, dispatch] = useDataLayerValue();
 
   const navigate = useNavigate();
 
@@ -32,7 +30,7 @@ export default function Login() {
     }
 
     else {
-        dispatch({ type: "USER", payload: true });
+
         window.alert("Login Successfull");
 
         navigate("/");

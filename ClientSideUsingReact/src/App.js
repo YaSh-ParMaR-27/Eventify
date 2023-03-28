@@ -20,6 +20,7 @@ import SeatAllot from './pages/SeatAllot';
 import EventDetails from './pages/EventDetails';
 import EventCheckout from './pages/EventCheckout';
 import EventForm from './pages/EventForm';
+import Profile from './pages/Profile';
 
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/logout" element={<Logout/>}/>
           <Route path="/registration" element={<Registration/>}/>
+          <Route path="/profile" element={<Profile/>}/>
           <Route path='*' element={<Error/>}/>
         
         </Routes>

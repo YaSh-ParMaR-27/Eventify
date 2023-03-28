@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Carousel from '../../components/Carousel'
 import DesignedPoster from './DesignedPoster'
@@ -17,6 +17,15 @@ import { useDataLayerValue } from '../../dataStore/DataLayer'
 
 export default function Home() {
   const [state , dispatch] = useDataLayerValue(); 
+  useEffect(() => {
+    var arrayb = document.cookie.split(";");
+    for (const item of arrayb) {
+      if (item.startsWith("jwt_token=")) {
+        dispatch({ type: "SET_COOKIE", payload: item.substring(10) });
+      }
+    }
+  },)
+  
   
   return (  
     <>

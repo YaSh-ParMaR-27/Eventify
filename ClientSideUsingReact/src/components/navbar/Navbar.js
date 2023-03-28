@@ -1,29 +1,20 @@
 import React, {  useState } from 'react'
 import { Link } from 'react-router-dom'
 import { navLinks } from '../../dataStore/data';
+import { useDataLayerValue } from '../../dataStore/DataLayer';
+import Avatar from '@mui/material/Avatar';
+import PersonIcon from '@mui/icons-material/Person';
 
 
 const Navbar = () => {
 
   let [open, setOpen] = useState(false);
+  let [state , dispatch] = useDataLayerValue();
 
   const closeDropdown = () => {
     open && setOpen(false);
   };
 
- 
-  // console.log("Cookie ---",document.cookie);
-  function getCookie(cname) {
-    var arrayb = document.cookie.split(";");
-    for (const item of arrayb) {
-      if (item.startsWith("jwt_token=")) {
-        return item.substring(10);
-      }
-    }
-  }
-
-  // console.log("Cookie <--->",getCookie());
-  const cookie_data = getCookie();
 
   return (
     <div className=' w-full  top-0 left-0 z-20'>
@@ -45,11 +36,12 @@ const Navbar = () => {
             ))
           }
 
-          {cookie_data ? <Link to="/logout">
-            <button className='bg-[#85b8ba]  text-slate-200 font-[Poppins] py-1 px-6 rounded  md:ml-10 lg:ml-72  hover:bg-indigo-400 
+          {state.cookie ? <Link to="/profile">
+            <Avatar sx={{ bgcolor: '#85b8ba', color:'#151e45'}} className=' text-[#151e45] font-[Poppins]  rounded-xl  md:ml-10 lg:ml-72  hover:bg-[#9bcdce] duration-500'><PersonIcon/></Avatar>
+            {/* <button className='bg-[#85b8ba] text-[#151e45] font-[Poppins] py-1 px-6 rounded  md:ml-10 lg:ml-72  hover:bg-[#9bcdce]
               duration-500'>
               LogOut
-            </button>
+            </button> */}
           </Link> : <Link to="/login">
             <button className='bg-[#85b8ba]  text-[#151e45] font-[Poppins] py-1 px-6 rounded  md:ml-10 lg:ml-72  hover:bg-[#9bcdce]
               duration-500'>

@@ -1,5 +1,5 @@
 export const initialState ={
-    userLoggedIn:null,
+    cookie:"",
     popularMovies:[],
     upcomingMovies:[],
     topRatedMovies:[],
@@ -14,10 +14,10 @@ const reducer = (state , action)=>{
     //action --> type , [payload]
     
     switch(action.type){
-        case 'USER':
+        case 'SET_COOKIE':
             return{
                 ...state,
-                userLoggedIn:action.payload,
+                cookie:action.payload,
             }
         case 'SET_POPULAR':
             return{

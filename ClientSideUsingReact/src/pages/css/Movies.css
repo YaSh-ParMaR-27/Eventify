@@ -1,5 +1,5 @@
 .movies_container .carousel.carousel-slider .control-arrow{
-    z-index: -10;
+    z-index: 0;
 }
 
 .movies_container .movie_card {

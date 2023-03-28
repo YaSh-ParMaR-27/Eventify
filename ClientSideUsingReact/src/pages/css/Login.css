@@ -2,47 +2,79 @@
 /* .form_input:focus{
     box-shadow: none;
 } */
+.form-container
+{
 
+}
+.login_container {
+margin: auto;
+    background-color: #fff;
+    width: 78%;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;   background-color: #fff;
+}
 .login_container .form_input{
-    border: 2px solid #007dff;
-    border-radius: 10px;
+    border: 2px solid #7a82a8;
+    margin: 8px;
+    border-radius: 8px;
     background-color: inherit;
+    padding: 10px;
+    /* width: 80%; */
+  
+}
+.login-heading{
+    font-size: 26px;
+    font-weight: 600;
+}
+.login-other-links{
+    color: #555f94;
+    font-weight: 500;
+}
+.login-other-links:hover,.login-other-links:focus{
+    color: #34407c;
 }
 
 .login_container .form_input:focus{
    background-color: inherit;
 }
 .login_container .form_input::placeholder{
-    text-align: center;
+    /* text-align: center; */
 }
 
 
 .login_container .btn{
-    background-color: #007dff;
-    border-radius: 50px;
+    background-color: #353b5d;
+    border-radius: 12px;
     width: 33.3%;
-    color: white;
+    color: #fff;
     font-weight: 600;
+    padding: 10px 24px;
     margin-top: 10px;
+    border: 2px solid #2a3b87 ;
 }
 
 .login_container .formContent .btn:hover{
-    background-color: #a6c9ff;
-    color: white;
+    /* background-color: #a6c9ff; */
+    /* color: white; */
+    background-color: #fff;
+    color: #353b5d;
+    border: 2px solid #353b5d;
+    transition: 300ms ease-in;
 }
 
 .login_container .formContent{
     /* width: 60%; */
     border-radius: 15px;
-    padding: 20px;
+    padding: 24px;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(#f4faff,#b9dcfb);
+    /* background: linear-gradient(#f4faff,#b9dcfb); */
     /* margin: auto; */
 }
 
 .login_container .formContent .form-control{
-    width: 90%;
+    width: 80%;
 }
 
 .login_container .formContent h1{
@@ -56,14 +88,14 @@
 }
 
 .login_container .forFormOuterBorder{
-    width: 80%;
+    /* width: 80%;
     margin: auto;
    
     border-left: 2px solid #007dff;
     border-top: 2px solid #007dff;
     border-radius: 10px;
     
-    padding: 10px;
+    padding: 10px; */
     
 }
 

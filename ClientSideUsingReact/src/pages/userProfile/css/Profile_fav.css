@@ -1,0 +1,30 @@
+.profile_favs{
+     /* border: 1px solid salmon; */
+     width: 50%;
+     /* box-shadow: rgba(73, 73, 73, 0.2) 0px 2px 8px 0px; */
+}
+.profile_favs p{
+    font-size: large;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #757575;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+    .profile_favs{
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width:576px) and  (max-width: 768px) {
+    .profile_favs{
+        width: 60%;
+    }
+}
+@media only screen and (min-width:768px) and  (max-width: 992px) {
+    .profile_favs{
+        width: 60%;
+    }
+}

@@ -70,9 +70,21 @@ const eventSchema = new mongoose.Schema({
         type : String,
         required:true
     },
-    createdAt: {
+    time: {
         type: String,  
-        default: Date.now 
+        required : true
+    },
+    regDeadline:{
+        type:String,
+        default:""
+    },
+    totSeats:{
+        type:Number,
+        required:true
+    },
+    availSeats:{
+        type:Number,
+        required:true
     },
     price:{
         type: Number,
@@ -86,9 +98,14 @@ const eventSchema = new mongoose.Schema({
         type:String,
         required : true
     },
+    organizer :{
+        type:String,
+        required:true
+    },
     Img : {
-        type: Buffer, // casted to MongoDB's BSON type: binData
-        required: true
+        data:Buffer,
+        type:String,
+        required : true
     },
     about:{
         type:String,
@@ -96,7 +113,6 @@ const eventSchema = new mongoose.Schema({
     },
     registeredUser : {
         type:Array
-    
     }
 })
 

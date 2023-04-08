@@ -1,26 +1,51 @@
 import React from 'react'
-import { Routes , Route} from "react-router-dom";
+import { Routes , Route, Navigate} from "react-router-dom";
 
-
-import Navbar from './components/navbar/Navbar'
-import About from './pages/About'
-import Contact from './pages/Contact';
-import Movies from './pages/Movies';
-import MoviesDetails from './pages/MovieDetails'
-import Events from './pages/Events';
-import Home from './pages/home/Home';
-import Login from './pages/Login';
-import Registration from './pages/Registration';
-import Footer from './components/footer/Footer';
-import Error from './pages/Error';
-import Logout from './pages/Logout';
-import CinemaDetails from './pages/CinemaDetails';
 import ApiCalls from './dataStore/ApiCalls';
-import SeatAllot from './pages/SeatAllot';
-import EventDetails from './pages/EventDetails';
-import EventCheckout from './pages/EventCheckout';
-import EventForm from './pages/EventForm';
-import Profile from './pages/Profile';
+
+//navbar
+import Navbar from './components/Navbar'
+//about
+import About from './pages/about/About'
+//contact
+import Contact from './pages/contact/Contact';
+
+//register
+import Registration from './pages/login/Registration';
+//login
+import Login from './pages/login/Login';
+//logout
+import Logout from './pages/login/Logout';
+
+//footer
+import Footer from './components/Footer';
+//error
+import Error from './pages/error/Error';
+
+
+//movies
+import Movies from './pages/movies/Movies';
+import MoviesDetails from './pages/movies/MovieDetails'
+import CinemaDetails from './pages/movies/CinemaDetails';
+import SeatAllot from './pages/movies/SeatAllot';
+
+//home
+import Home from './pages/home/Home';
+
+
+//Events
+import EventsMain from './pages/events/EventsMain';
+import EventDetails from './pages/events/EventDetails';
+import EventCheckout from './pages/events/EventCheckout';
+import EventForm from './pages/events/EventForm';
+
+//profile
+import ProfileElementsRender from './pages/userProfile/ProfileElementsRender';
+import ProfileInfo from './pages/userProfile/Profile_info';
+import ProfilePayments from './pages/userProfile/Profile_payments';
+import ProfileOrders from './pages/userProfile/Profile_orders';
+import ProfileFav from './pages/userProfile/Profile_fav';
+import ProfileNotifications from './pages/userProfile/Profile_notifications';
 
 
 export default function App() {
@@ -31,20 +56,36 @@ export default function App() {
       
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/fillevent" element={<EventForm/>}/>
+      
+          <Route path="/about" element={<About/>}/>
+          <Route path="/contact" element={<Contact/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/registration" element={<Registration/>}/>
+          
+          {/* Movies Route */}
           <Route path="/movies" element={<Movies/>}/>
           <Route path="movies/:id" element={<MoviesDetails/>}/>
           <Route path="movies/:id/cinemadetails" element={<CinemaDetails/>}/>
           <Route path="movies/:id/cinemadetails/seatallot" element={<SeatAllot/>}/>
-          <Route path="/events" element={<Events/>}/>
+
+          {/* Event Route */}
+          <Route path="/events" element={<EventsMain/>}/>
           <Route path="/events/eventdetails/:id" element={<EventDetails/>}/>
           <Route path='/events/eventdetails/checkout' element={<EventCheckout/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/logout" element={<Logout/>}/>
-          <Route path="/registration" element={<Registration/>}/>
-          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/fillevent" element={<EventForm/>}/>
+
+          {/* Profile Route */}
+          <Route path="/profile" element={<ProfileElementsRender/>}>
+            <Route index element={<Navigate to="info" replace />}/>
+            <Route path='info' element={<ProfileInfo/>}/>
+            <Route path='orders' element={<ProfileOrders/>}/>
+            <Route path='payments' element={<ProfilePayments/>}/>
+            <Route path='favourite' element={<ProfileFav/>}/>
+            <Route path='notification' element={<ProfileNotifications/>}/>
+            <Route path="logout" element={<Logout/>}/>
+          </Route>
+
+          {/* Error Route */}
           <Route path='*' element={<Error/>}/>
         
         </Routes>

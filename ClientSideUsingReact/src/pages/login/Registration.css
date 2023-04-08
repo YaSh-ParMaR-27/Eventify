@@ -1,0 +1,105 @@
+.register__container{
+    /* border: 1px solid rgb(219, 34, 14); */
+    padding: 1%;
+    min-height: 92vh;
+    /* padding-top: 4%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register__container .register__image{
+    width: 80%;
+    margin: auto;
+    margin-top: 8%;
+}
+
+.register__container .form__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 0;
+    gap: 4px;
+}
+
+.register__container .form__input{
+    border: 2px solid #7a82a8;
+    margin: 8px;
+    border-radius: 8px;
+    background-color: inherit;
+    padding: 10px;
+    width: 80%;
+}
+
+.register__container .form__input:focus{
+    background-color: inherit;
+}
+
+.register__container .register__head1{
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    font-size: 24px;
+}
+
+.register__container .register__head2{
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.register__container .register__btn{
+    background-color: #353b5d;
+    border-radius: 12px;
+    width: 33.3%;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 24px;
+    margin-top: 10px;
+    border: 2px solid #2a3b87 ;
+}
+
+.register__container .register__btn:hover{
+    background-color: inherit;
+    color: #353b5d;
+    border: 2px solid #353b5d;
+    transition: 300ms ease-in;
+}
+
+.register__container .other__links{
+    color: #555f94;
+    font-weight: 500;
+    margin-top: 2%;
+}
+
+.register__container .other__links:hover,.other__links:focus{
+    color: #34407c;
+}
+
+@media only screen and (max-width: 768px) {
+    .register__container .register__image{
+        width: 70%;
+        margin: auto;
+    }
+    .register__container{  
+        margin-bottom: 2%;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:992px) {
+    .register__container .register__image{
+        width: 90%;
+        margin: auto ;
+        margin-top: 22%;
+    }
+    .register__container{  
+        padding-top: 2%;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .register__container .register__image{
+        margin-top: 21%;
+    }
+}

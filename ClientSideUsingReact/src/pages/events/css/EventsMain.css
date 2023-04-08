@@ -1,0 +1,169 @@
+.event_main_container .search_bar_row{
+    /* border: 1px solid palevioletred; */
+    width: 90%;
+    /* margin: auto; */
+    margin: auto;
+    /* justify-content: center; */
+    margin-top: 2%;
+}
+
+
+
+.event_main_container .sidebar{
+    /* border: 1px solid rgb(50, 72, 15); */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #334155;
+    color: rgb(204, 203, 203);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* border-radius: 10px; */
+}
+.event_main_container .sidebar h1{
+    font-size: larger;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+    margin-bottom: 9px;
+    padding: 5px 5px;
+    background-color: #e3e9f1;
+    color: black;
+}
+.event_main_container .sidebar p{
+    letter-spacing: 0.5px;
+    /* margin-bottom: 5%; */
+    border-bottom: 0.5px solid rgb(106, 106, 106);
+    padding: 3% 6%; 
+    text-transform: uppercase;
+    font-size: 14px;
+   
+}
+.event_main_container .sidebar .last_p{
+    border-bottom: none;
+}
+
+
+.event_main_container .search_Inp{
+    border: none;
+  margin: 0;
+  padding: 8px;
+  padding-right: 6%;
+  font-size: 14px;
+  width: 60%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.event_main_container .search_btn {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 40px;
+    padding: 0.5% 0;
+    border-radius: 5px;
+    margin: 0;
+    border: 1px solid transparent;
+ 
+    background: #9bcdce url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    /* opacity: 0.7; */
+    position: absolute;
+    margin-left: 33%;
+}
+.event_main_container .search_Inp:hover{
+    box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+}
+.event_main_container .search_Inp:focus{
+    box-shadow: 0 0 5pt 2pt #D3D3D3;
+    outline-width: 0px;
+}
+
+@media only screen and (max-width: 576px) {
+    .event_main_container .search_Inp{
+        width: 100%;
+    }
+    .event_main_container .search_Inp{
+      padding-right: 18%;
+    }
+    .event_main_container .search_btn{
+        margin-left: 58%;  
+        padding: 1.2% 0;
+    }
+    .event_main_container .sidebar{
+        width: 75%;
+        margin: auto;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 15px; 
+    }
+
+    .event_main_container .search_bar_row{
+        justify-content: center;
+    }
+
+    .event_main_container .sidebar h1{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .event_main_container .sidebar p{
+        width: 38%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        margin-left: 10px;
+    }
+    .event_main_container .search_bar_col{
+        width: 83%;
+    }
+}
+
+
+@media only screen and (min-width:576px) and  (max-width: 768px) {
+    .event_main_container .search_Inp{
+        width: 80%;
+    }
+    
+    .event_main_container .search_Inp{
+        padding-right: 11%;
+      }
+    .event_main_container .search_btn{
+        margin-left: 40%;  
+        padding: 1% 0;
+    }
+    .event_main_container .search_bar_col{
+        width: 70%;
+    }
+    .event_main_container .search_bar_row{
+        /* justify-content: center; */
+    }
+    
+}
+
+@media only screen and (min-width:768px) and  (max-width: 992px) {
+    .event_main_container .search_Inp{
+        width: 80%;
+    }
+    
+    .event_main_container .search_Inp{
+        padding-right: 11%;
+      }
+    .event_main_container .search_btn{
+        margin-left: 41%;  
+        padding: 0.7% 0;
+    }
+    .event_main_container .search_bar_col{
+        /* width: 70%; */
+        margin-left: 7%;
+    }
+    
+}
+
+
+@media only screen and (min-width: 992px) {
+    .event_main_container .search_bar_col{
+        /* width: 70%; */
+        margin-left: 5%;
+    }
+    .event_main_container .search_bar_row{
+        /* justify-content: center; */
+        /* margin-left: 2%; */
+    }
+}

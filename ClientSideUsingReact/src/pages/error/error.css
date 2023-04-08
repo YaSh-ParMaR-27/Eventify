@@ -1,0 +1,95 @@
+.error_page{
+    /* border: 3px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 92vh;
+}
+
+.error_page .leftside{
+    width: 30%;
+    /* border: 1px solid purple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}
+.error_page .leftside h1{
+    font-size: 3rem;
+    font-weight: bold; 
+    text-align: center;
+}
+.error_page .leftside p{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgb(133, 133, 133);
+    margin-top: 6px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.error_page .leftside button{
+    border: 2px solid #2a3b87 ;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+    background-color: #353b5d;
+    color: white;
+    border-radius: 2px;
+    letter-spacing: 2px;
+}
+.error_page .leftside button:hover{
+    background-color: #fff;
+    color: #353b5d;
+    border: 2px solid #353b5d;
+    transition: 300ms ease-in;
+}
+
+
+.error_page .rightside{
+    /* border: 1px solid saddlebrown; */
+    width: 50%;
+}
+
+.error_page .rightside img{
+    width: 80%;
+    margin: auto;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .error_page{
+        flex-direction: column;
+        height: fit-content;
+    }
+    .error_page .leftside{
+        order: 2;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .error_page .rightside{
+        order: 1;
+        width: 100%;
+    }
+    .error_page .leftside h1{
+        font-size: 2rem;
+    }
+
+}
+
+
+
+@media only screen and (min-width:768px) and  (max-width: 992px) {
+    .error_page .leftside{
+        width: 90%;
+    }
+    .error_page .rightside{
+        width: 100%;
+    }
+    .error_page .leftside h1{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+} 

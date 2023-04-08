@@ -1,0 +1,118 @@
+
+.about_container .about_img{
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: auto;
+}
+.about_container .about_img img{
+    /* border: 1px solid rgb(20, 4, 20); */
+    width: 40%;
+    /* height: 800px; */
+    margin: auto;
+}
+
+
+.about_container .first_p{
+    width: 70%;
+    margin: auto;
+}
+.about_container .first_p .head{
+    font-size: larger;
+    letter-spacing: 1px; 
+    font-weight: 600;
+}
+.about_container .first_p .detail_txt{
+    letter-spacing: 0.1em;
+}
+
+.about_container .quote{
+    /* border-left: 3px solid #353b5d; */
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    padding: 10px;
+    width: 70%;
+    margin: 20px auto ;
+    background-color: #353b5d;
+    color: white;
+}
+.about_container .quote p{
+    font-size: large;
+}
+
+.about_container .last_p{
+    width: 70%;
+    margin: auto;
+    margin: 20px auto;
+}
+.about_container .last_p p{
+    letter-spacing: 0.1em;
+}
+.about_container .second_p{
+    width: 70%;
+    margin: 20px auto;
+}
+.about_container .second_p p{
+    letter-spacing: 0.1em;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .about_container .about_img{
+        width: 100%;
+    }
+    .about_container .about_img img{
+        width: 80%;
+    }
+    .about_container .first_p{
+        width: 90%;
+    }
+    .about_container .quote{
+        width: 90%;
+    }
+    .about_container .second_p{
+        width: 90%;
+    }
+    .about_container .last_p{
+        width: 90%;
+    }
+}
+@media only screen and (min-width:576px) and  (max-width: 768px) {
+    .about_container .about_img{
+        width: 100%;
+    }
+    .about_container .about_img img{
+        width: 70%;
+    }
+    .about_container .first_p{
+        width: 90%;
+    }
+    .about_container .quote{
+        width: 90%;
+    }
+    .about_container .second_p{
+        width: 90%;
+    }
+    .about_container .last_p{
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width:768px) and  (max-width: 992px) {
+    .about_container .about_img{
+        width: 100%;
+    }
+    .about_container .about_img img{
+        width: 60%;
+    }
+    .about_container .first_p{
+        width: 80%;
+    }
+    .about_container .quote{
+        width: 80%;
+    }
+    .about_container .second_p{
+        width: 80%;
+    }
+    .about_container .last_p{
+        width: 80%;
+    }
+}

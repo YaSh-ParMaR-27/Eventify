@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 
 import Carousel from '../../components/Carousel'
 import DesignedPoster from './DesignedPoster'
-import EventCards from './EventCards'
-import MovieCards from '../../components/movie_cards/MovieCards'
+import HomeEventCards from './HomeEventCards'
+import MovieCards from '../../components/MovieCards'
+
 //react-slick-slider
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -30,7 +31,7 @@ export default function Home() {
   return (  
     <>
       <Carousel slides={slides} />
-      <EventCards/>
+      <HomeEventCards/>
       <DesignedPoster/>
       <div className="home_movie_card">
         <h1 className='text-2xl mb-2 font-bold'> Recomended Movies</h1>

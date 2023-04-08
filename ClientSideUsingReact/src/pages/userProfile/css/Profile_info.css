@@ -1,0 +1,51 @@
+.profile_info{
+    /* border: 1px solid red; */
+    width: 75%;
+    box-shadow: rgba(73, 72, 72, 0.2) 0px 2px 8px 0px;
+    background-color: #334155;
+}
+.profile_info div{
+    /* border: 1px solid green; */
+    display: flex;
+    gap: 11%;
+    padding: 15px;
+    margin: 10px;
+    border-bottom: 1px solid rgba(188, 185, 185, 0.33);
+}
+.profile_info div p{
+    font-size: large;
+    color: rgb(217, 217, 217);
+}
+
+.profile_info div .value{
+    /* font-weight: 400; */
+    color: rgb(150, 150, 150);
+}
+
+.profile_info #border_remove{
+    border-bottom: none;
+}
+
+@media only screen and (max-width: 576px) {
+    .profile_info{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:576px) and  (max-width: 768px) {
+    .profile_info{
+        width: 90%;
+    }
+    .profile_info div{
+        gap: 10%;
+    }
+    .profile_info div p{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width:768px) and  (max-width: 992px) {
+    .profile_info{
+        width: 90%;
+    }   
+}

@@ -1,0 +1,56 @@
+.event_details_container .event_image img   {
+    width: 100%;
+    max-height: 57vh;
+}
+.event_details_container .event__details{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* max-height: 55vh; */
+    
+}
+.event_details_container .event__details .para{
+    border-bottom: 0.5px solid grey;
+    padding: 2%;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.event_details_container .event__details .event_name{
+    font-size: 20px;
+    font-weight: 400;
+    color:  rgb(26, 112, 165);
+}
+.event_details_container .venue{
+    color:grey;
+}
+.event_details_container .last_p{
+    color:grey;
+    border-bottom: none;
+    padding: 2%;
+    font-weight: 600;
+}
+
+.event_details_container .event__details .value{
+    font-weight: normal;
+    color:grey;
+}
+
+
+.event_details_container .event_description h1{
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 0.2px;
+    text-decoration: underline;
+    margin-bottom: 1%;
+}
+
+.event_details_container .buy_btn{
+    background-color: #85b8ba;
+    padding: 2% 9%;
+    font-size: larger;
+    border-radius: 5px;
+    width: 60%;
+    margin: auto;
+}
+.event_details_container .buy_btn:hover{
+    background-color: #b8e1e1;
+}

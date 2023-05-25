@@ -131,19 +131,32 @@ router.post('/contact', async (req, res) => {
 
 //=========================================================================
 //Multer
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        console.log('hello from destin')
-        cb(null, './uploads')
-    },
-    filename: (req, file, cb) => {
-        console.log('hello from filename')
-        cb(null, file.originalname)
+
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         console.log('hello from destin')
+//         cb(null, './uploads')
+//     },
+//     filename: (req, file, cb) => {
+//         console.log('hello from filename')
+//         cb(null, file.originalname)
+//     }
+// })
+
+// const upload = multer({ storage: storage })
+
+// NEW CODE - CHECK IF THIS WORKS
+ const storage = multer.diskStorage({
+    destination : './uploads/',
+    filename : function (req,file,cb){
+        cb(null,file.fieldname+'-'+ Date.now()+
+        path.extname(file.originalname));
+        
     }
-})
-
-const upload = multer({ storage: storage })
-
+});
+const upload = multer({
+    storage: storage
+}).single('file');
 
 //Event route
 router.post('/event', upload.single('uploadImage'), async (req, res) => {

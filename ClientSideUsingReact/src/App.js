@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes , Route, Navigate} from "react-router-dom";
+import { Routes , Route, Navigate } from "react-router-dom";
 
 import ApiCalls from './dataStore/ApiCalls';
 
@@ -37,7 +37,7 @@ import Home from './pages/home/Home';
 import EventsMain from './pages/events/EventsMain';
 import EventDetails from './pages/events/EventDetails';
 import EventCheckout from './pages/events/EventCheckout';
-import EventForm from './pages/events/EventForm';
+// import EventForm from './pages/events/EventForm';
 
 //profile
 import ProfileElementsRender from './pages/userProfile/ProfileElementsRender';
@@ -47,16 +47,27 @@ import ProfileOrders from './pages/userProfile/Profile_orders';
 import ProfileFav from './pages/userProfile/Profile_fav';
 import ProfileNotifications from './pages/userProfile/Profile_notifications';
 
+//admin
+import Sidebar from './pages/admin/Sidebar';
+import Dashboard from './pages/admin/Dashboard';
+import EventList from './pages/admin/EventList'
+import EventUpload from './pages/admin/EventUpload'
+import Users from './pages/admin/Users'
+import PeopleContacted from './pages/admin/PeopleContacted'
+import AdminProfile from './pages/admin/AdminProfile'
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminRegister from './pages/admin/AdminRegister';
+import AdminLogout  from './pages/admin/AdminLogout';
 
 export default function App() {
   return (
     <>
       <ApiCalls/>
-      <Navbar/>
       
+      <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
-      
+
           <Route path="/about" element={<About/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/login" element={<Login/>}/>
@@ -72,7 +83,7 @@ export default function App() {
           <Route path="/events" element={<EventsMain/>}/>
           <Route path="/events/eventdetails/:id" element={<EventDetails/>}/>
           <Route path='/events/eventdetails/checkout' element={<EventCheckout/>}/>
-          <Route path="/fillevent" element={<EventForm/>}/>
+          {/* <Route path="/fillevent" element={<EventForm/>}/> */}
 
           {/* Profile Route */}
           <Route path="/profile" element={<ProfileElementsRender/>}>
@@ -85,13 +96,30 @@ export default function App() {
             <Route path="logout" element={<Logout/>}/>
           </Route>
 
+          <Route path='/adminregister' element={<AdminRegister/>}/>
+          <Route path='/admin' element={<AdminLogin/>}/>
+
+          <Route path="/homeadmin" element={<Sidebar/>}>
+            <Route index  element={<Navigate to={"dashboard"} replace/>}/>
+            <Route path="dashboard" element={<Dashboard/>}/>
+            <Route path="eventlist" element={<EventList/>}/>
+            <Route path="upload" element={<EventUpload/>}/>
+            <Route path="peoplecontacted" element={<PeopleContacted/>}/>
+            <Route path="users" element={<Users/>}/>
+            <Route path="profile" element={<AdminProfile/>}/>
+            <Route path="logout" element={<AdminLogout/>}/>
+          </Route>
+
+          
           {/* Error Route */}
           <Route path='*' element={<Error/>}/>
-        
         </Routes>
+        
+       
       
       <Footer/>
      
     </>
   )
+
 }

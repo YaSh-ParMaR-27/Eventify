@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.event_container .event_head{
+    /* border: 1px solid red; */
+    background-color: aliceblue;
+    padding: 15px;
+}
+.event_container .event_head h2{
+    font-size: large;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.event_container .adminEvent_row{
+     /* border: 1px solid purple; */
+     margin: 3%;
+     margin-top: 5%;
+     height: 70vh;
+     overflow-x: auto;
+     overflow-y: auto;
+     display: flex;
+     justify-content: center;
+}

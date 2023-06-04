@@ -1,0 +1,81 @@
+.dashboard_container{
+    /* border: 2px solid purple; */
+}
+
+.dashboard_container .head{
+    background-color: aliceblue;
+    padding: 15px;
+}
+.dashboard_container .head h2{
+    font-size: large;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.dashboard_container .box_row{
+    /* border: 1px solid red; */
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dashboard_container .box{
+    /* border: 1px solid green; */
+    color: grey;
+    padding: 4%;
+    background-color: aliceblue;
+    box-shadow: 10px 10px 8px #888888;
+    border-radius: 10px;
+    /* height: 150px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard_container .box span{
+    /* border: 1px solid green; */
+    /* margin-left: 20%; */
+    font-size: xx-large;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+@media only screen and (max-width: 576px) {
+}
+
+
+@media only screen and (min-width:576px) and  (max-width: 768px) {
+    .dashboard_container .box_row{
+        padding: 3%;
+    }
+
+    .dashboard_container .box{
+        padding: 10%;
+        height: 40px;
+        margin: 3%;
+    }
+    .dashboard_container .box span{
+        margin-left: 0;
+        font-size: x-large;
+    }  
+   
+}
+
+@media only screen and (min-width:768px) and  (max-width: 992px) {  
+    .dashboard_container .box{
+        padding: 15%;
+        height: 80px;
+    }
+    .dashboard_container .box span{
+        margin-left: 0;
+        font-size: x-large;
+    }  
+}
+
+
+@media only screen and (min-width: 992px) {
+ 
+}

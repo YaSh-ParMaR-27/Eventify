@@ -1,0 +1,107 @@
+.adminProfile_container .adminProfile_head{
+    background-color: aliceblue;
+    padding: 15px;
+}
+.adminProfile_container .adminProfile_head h2{
+    font-size: large;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.adminProfile_container .profile_details_row{
+    /* border: 1px solid purple; */
+    margin: 3%;
+    height: 80vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminProfile_container .profile_icon{
+    /* border: 1px solid red; */
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+.adminProfile_container .profile_icon .icon{
+  font-size: 150px;
+  color: rgb(94, 149, 183);
+  /* background-color: black;
+  border-radius: 100px; */
+}
+
+.adminProfile_container .profile_details{
+    height: 80%;
+    /* border: 1px solid purple; */
+    background: linear-gradient(#2563a4, #343a99);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.adminProfile_container .profile_details div{
+    background-color: aliceblue;
+    margin: 4% 0px;
+    border-radius: 10px;
+    padding: 2%;
+ }
+.adminProfile_container .profile_details div h1{
+    letter-spacing: 2px;
+    font-size: large;
+    font-weight: 500;
+    
+ }
+.adminProfile_container .profile_details div p{
+    letter-spacing: 1px;    
+ }
+
+ .adminProfile_container .profile_details #heading{
+    font-size: 25px;
+    letter-spacing: 5px;
+    color: white;
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+    margin-bottom: 5%;
+    margin-top: 2%;
+ }
+
+ .adminProfile_container .profile_details .btn{
+    background: rgb(94, 149, 183);
+    width: 50%;
+    margin: auto;
+    padding: 2% 0%;
+    font-size: large;
+    border-radius: 4px;
+    /* color: white; */
+ }
+ .adminProfile_container .profile_details .btn:hover{
+    background:rgb(97, 163, 203);
+    color: #000;
+    transition: all 0.5s;
+ }
+
+
+ @media only screen and (max-width: 576px) {
+    .adminProfile_container .profile_icon{
+        height: 50%;
+    }
+}
+
+@media only screen and (min-width:576px) and  (max-width: 768px) {
+    .adminProfile_container .profile_icon{
+        display: none;
+    }
+   
+}
+
+@media only screen and (min-width:768px) and  (max-width: 992px) {  
+  
+}
+
+
+@media only screen and (min-width: 992px) {
+ 
+}

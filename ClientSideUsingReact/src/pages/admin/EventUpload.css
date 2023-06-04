@@ -1,0 +1,173 @@
+.event_upload_container .form_head{
+    background-color: aliceblue;
+    padding: 15px;
+}
+.event_upload_container .form_head h2{
+    font-size: large;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.event_upload_container .event_form_row{
+    overflow: auto;
+}
+
+
+.event_upload_container .event_form_container{
+    overflow: auto;
+    /* border: 1px solid red; */
+    padding: 0 2%;
+    height: 91vh;
+}
+
+.event_upload_container .event_form_container .event_form{
+    overflow: auto;
+    background: linear-gradient(#2563a4, #343a99);
+    border: 1px solid cadetblue;
+    padding: 2%;
+}
+.event_upload_container .event_form_container .e_input input{
+    background-color: inherit;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    border-radius: 10px;
+    padding: 1%;
+}
+.event_upload_container .e_input{
+    /* border: 1px solid firebrick; */
+    display: flex;
+    gap: 4%;
+    margin-bottom: 2%;
+}
+.event_upload_container input::placeholder{
+   letter-spacing: 2px;
+}
+
+.event_upload_container .event_name_type{
+}
+
+.event_upload_container #inp_type,#inp_venue{
+    width: 70%;
+}
+
+.event_upload_container .event_seats_organizer{
+    gap: 10%;
+}
+
+.event_upload_container #inp_image{
+    padding: 1%;
+}
+.event_upload_container #inp_about{
+    width: 60%;
+    height: 50px;
+    padding: 5px;
+    margin-top: 1%;
+    background-color: inherit;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    color: whitesmoke;
+}
+.event_upload_container #inp_about::placeholder{
+    letter-spacing: 2px;
+}
+
+.event_upload_container #inp_image{
+    background-color: inherit;
+    letter-spacing: 2px;
+    color:  rgb(173, 173, 173);
+}
+
+.event_upload_container .event_submit_btn{
+    /* border: 1px solid grey; */
+    cursor: pointer;
+    background: rgb(94, 149, 183);
+    width: 30%;
+    margin: 1% 33%;
+    padding: 10px;
+    border-radius: 4px;
+    /* color: white; */
+    
+}
+.event_upload_container .event_submit_btn:hover{
+    background:rgb(97, 163, 203);
+    color: #000;
+    transition: all 0.5s;
+}
+
+.event_upload_container .date_label{
+    letter-spacing: 2px;
+    color:  rgb(173, 173, 173);
+}
+
+.event_upload_container .event_date{
+    gap: 2%;
+}
+
+.event_upload_container .event_date input{
+    margin-right: 3%;
+    
+}
+
+.event_upload_container input{
+    color: whitesmoke;
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .event_upload_container .e_input{
+       flex-direction: column;
+       margin: 6% 0 ;
+    }
+
+    .event_upload_container #inp_type,#inp_venue{
+        margin-top: 4%;
+        width: 100%;
+    }
+
+    .event_upload_container #inp_availSeats {
+        margin: 6% 0;
+    }
+
+    .event_upload_container #inp_about{
+        width: 100%;
+    }
+
+
+    .event_upload_container .event_date input{
+        margin-bottom: 7%;    
+    }
+   
+}
+
+
+
+@media only screen and (min-width:768px) and  (max-width: 992px) {  
+    .event_upload_container .e_input{
+        flex-direction: column;
+        margin: 6% 0 ;
+     }
+ 
+     .event_upload_container #inp_type,#inp_venue{
+         margin-top: 4%;
+         width: 100%;
+     }
+ 
+     .event_upload_container #inp_availSeats {
+         margin: 6% 0;
+     }
+ 
+     .event_upload_container #inp_about{
+         width: 100%;
+     }
+ 
+ 
+     .event_upload_container .event_date input{
+         margin-bottom: 7%;    
+     }
+  
+}
+
+
+@media only screen and (min-width: 992px) {
+ 
+}

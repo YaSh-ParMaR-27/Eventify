@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import balloonImg from '../../assets/DJ Night.jpg'
@@ -8,6 +8,7 @@ export default function EventDetailsMain() {
     const navigate = useNavigate();
     const location = useLocation();   
     // console.log(location.state); 
+    const [seatToBook , setSeatsToBook] = useState(1);
 
     const  {eventName , date , time , regDeadline, totSeats, availSeats, price, genre, venue, organizer ,Img, about} = location.state;
     
@@ -26,7 +27,7 @@ const checkUserLogggedIn = async (e)=>{
         const data = await res.json();
         console.log(data);
   
-        navigate('/events/eventdetails/checkout',{state:{userData:data,eventData:location.state} });
+        navigate('/events/eventdetails/checkout',{state:{userData:data,eventData:location.state, numberOfSeats:seatToBook} });
     }
     catch(err){
         console.log(err);
@@ -68,11 +69,11 @@ const checkUserLogggedIn = async (e)=>{
                 </div>
                 <div className="col-12 col-md-4 col-lg-3  seats_buy flex flex-col justify-center col-3 ">
                    <p className="flex gap-6 my-2 justify-center">  <span className="text-lg ">Total Seats : </span>  
-                        <select className='p-2 px-4 rounded-md bg-[#334155] text-white '>
+                        <select className='p-2 px-4 rounded-md bg-[#334155] text-white ' onClick={(e)=>setSeatsToBook(e.target.value)}>
                             <option className='opt' value="1">01</option>
-                            <option className='opt' value="1">02</option>
-                            <option className='opt' value="1">03</option>
-                            <option className='opt' value="1">04</option>
+                            <option className='opt' value="2">02</option>
+                            <option className='opt' value="3">03</option>
+                            <option className='opt' value="4">04</option>
                         </select>
                    </p>
                    <button onClick={checkUserLogggedIn} className='buy_btn hover:bg-[#9bcdce] duration-500 mb-2' >Buy Ticket</button>

@@ -168,7 +168,7 @@ const registerWithoutPay = async ()=>{
                 <tbody>
                   <tr className='flex justify-between'>
                     <td>{location.state.eventData.eventName}</td>
-                    <td><CurrencyRupeeIcon fontSize='12' />{location.state.eventData.price}</td>
+                    <td><CurrencyRupeeIcon fontSize='12' />{location.state.eventData.price * location.state.numberOfSeats}</td>
                   </tr>
                   <tr className='flex justify-between'>
                     <td colSpan={2}>{location.state.eventData.date} | {location.state.eventData.time} </td>
@@ -180,7 +180,7 @@ const registerWithoutPay = async ()=>{
                   </tr>
                   <tr className='flex justify-end'>
                     <td>Total</td>
-                    <td className='ml-[2%]'><CurrencyRupeeIcon fontSize='1' />{location.state.eventData.price === 0 ? 0 :  location.state.eventData.price+1}</td>
+                    <td className='ml-[2%]'><CurrencyRupeeIcon fontSize='1' />{location.state.eventData.price === 0 ? 0 :  location.state.eventData.price* location.state.numberOfSeats +1}</td>
                   </tr>
                   <hr style={{ border: "1px dashed black", marginTop: "4px", marginBottom: "4px" }} />
                   <tr className='flex justify-center'>

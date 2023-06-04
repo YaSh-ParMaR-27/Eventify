@@ -25,7 +25,7 @@ const Authenticate = require('../middleware/authenticate');
 router.use(cookieParser());
 
 require('../DB/connectDB');
-const { RegisteredUserData, ContactUserData, EventData } = require('../Model/userSchema');
+const { RegisteredUserData, ContactUserData, EventData, RegisteredAdminData } = require('../Model/userSchema');
 
 
 router.get('/', (req, res) => {
@@ -54,6 +54,40 @@ router.post('/register', (req, res) => {
         //before save our hashing password code will run
         newUser.save().then(() => {
             res.status(201).json({ message: "user registered successfully" });
+        }).catch((err) => {
+            res.status(500).json({ error: "Failed to register!" });
+        })
+    }).catch((err) => {
+        console.log(err);
+    })
+})
+
+//Admin Register Route
+router.post('/adminregister', (req, res) => {
+
+    const { name, email, securityKey, password } = req.body;
+
+    if (!name || !email || !securityKey || !password) {
+        return res.status(422).json({ error: "All fields need to be filled properly!" });
+    }
+    
+    if(securityKey!="DemonSlayer"){
+        return res.status(422).json({ error: "InValid Security Key" });
+    }
+
+    RegisteredAdminData.findOne({ email: email }).then((userExist) => {
+        if (userExist) {
+            return res.status(422).json({ error: "Email already exist!" });
+        }
+
+        //below line is same as 
+        //const user = new RegisteredUserData({name:name , email:email , mobile:mobile , password:password});
+        //if the key value pair have the same name the we can write them like we have done below 
+        const newAdmin = new RegisteredAdminData({ name, email, securityKey, password });
+
+        //before save our hashing password code will run
+        newAdmin.save().then(() => {
+            res.status(201).json({ message: "admin registered successfully" });
         }).catch((err) => {
             res.status(500).json({ error: "Failed to register!" });
         })
@@ -101,6 +135,35 @@ router.post('/login', async (req, res) => {
     }
 })
 
+//Admin Login Route
+router.post('/adminlogin', async (req, res) => {
+    try {
+        let token;
+        const { email, password } = req.body;
+        if (!email || !password) {
+            return res.status(401).json({ error: "All fields must be filled!" });
+        }
+        const adminLogin = await RegisteredAdminData.findOne({ email: email });
+
+        if (adminLogin) {
+            const isPwdMatching = await bcrypt.compare(password, adminLogin.password);
+            console.log(isPwdMatching)
+            if (!isPwdMatching) {
+                res.status(401).json({ error: "Invalid credentials" })
+            }
+            else {
+                res.json({ message: "user login successfull" })
+            }
+        }
+        else {
+            res.status(401).json({ error: "Invalid credentials" })
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+})
+
 //logout route
 router.get('/logout', (req, res) => {
     console.log('hello logout page');
@@ -130,63 +193,18 @@ router.post('/contact', async (req, res) => {
 
 
 //=========================================================================
-//Multer
 
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         console.log('hello from destin')
-//         cb(null, './uploads')
-//     },
-//     filename: (req, file, cb) => {
-//         console.log('hello from filename')
-//         cb(null, file.originalname)
-//     }
-// })
-
-// const upload = multer({ storage: storage })
-
-// NEW CODE - CHECK IF THIS WORKS
- const storage = multer.diskStorage({
-    destination : './uploads/',
-    filename : function (req,file,cb){
-        cb(null,file.fieldname+'-'+ Date.now()+
-        path.extname(file.originalname));
-        
-    }
-});
-const upload = multer({
-    storage: storage
-}).single('file');
 
 //Event route
-router.post('/event', upload.single('uploadImage'), async (req, res) => {
-    const { eventName, date, time, regDeadline, totSeats, availSeats, price, genre, venue, organizer, about } = req.body;
-    console.log("reqbody-->", req.body);
-    console.log(eventName)
-    console.log(date)
-    console.log(time)
-    console.log(regDeadline)
-    console.log(totSeats)
-    console.log(availSeats)
-    console.log(price)
-    console.log(genre)
-    console.log(venue)
-    console.log(organizer)
-    // console.log(Img)
-    console.log(about)
-    // console.log(req.file)   
-    // console.log(req.file.filename)
-    
+router.post('/event', async (req, res) => {
+    const { eventName, date, time, regDeadline, totSeats, availSeats, price, genre, venue, organizer, about } = req.body;    
     
     if (!eventName || !date || !time || !regDeadline || !totSeats || !availSeats || !price || !genre || !venue || !organizer  || !about) {
         console.log('error in event filling form : some fields may be empty!');
         return res.status(422).json({ error: "All fields need to be filled properly!" });
     }
     const event_data = new EventData({
-        eventName, date, time, regDeadline, totSeats, availSeats, price, genre, venue, organizer, Img: {
-            data: fs.readFileSync('./uploads/' + req.file.filename),
-            type: "image/png/jpeg/jpg",
-        }, about
+        eventName, date, time, regDeadline, totSeats, availSeats, price, genre, venue, organizer,  about
     });
 
     event_data.save().then(() => {
@@ -202,6 +220,39 @@ router.post('/event', upload.single('uploadImage'), async (req, res) => {
 router.get("/geteventdetails", async (req, res) => {
     try {
         const details = await EventData.find({});
+        res.send(details);
+        console.log(details);
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+//Get admin details
+router.get("/getadmindetails", async (req, res) => {
+    try {
+        const details = await RegisteredAdminData.find({});
+        res.send(details);
+        console.log(details);
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+//Get user details
+router.get("/getuserdetails", async (req, res) => {
+    try {
+        const details = await RegisteredUserData.find({});
+        res.send(details);
+        console.log(details);
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+//Get Contact details
+router.get("/getcontacts", async (req, res) => {
+    try {
+        const details = await ContactUserData.find({});
         res.send(details);
         console.log(details);
     } catch (err) {

@@ -1,83 +1,30 @@
 .profile_orders{
-    /* border: 1px solid red; */
-    /* height: 70vh; */
-    width: 70%;
+    /* border: 1px solid salmon; */
+    width: 50%;
+    /* box-shadow: rgba(73, 73, 73, 0.2) 0px 2px 8px 0px; */
 }
-
-.profile_orders h1{
-    text-transform: uppercase;
-    font-size: large;
-    font-weight: 600;
-    margin-bottom: 5px;
-    padding: 5px;
-    padding-left: 8px;
-    text-decoration: underline;
-    
-    
+.profile_orders p{
+   font-size: large;
+   font-weight: 500;
+   text-transform: uppercase;
+   color: #757575;
+   letter-spacing: 1px;
+   text-align: center;
 }
-.profile_orders .event_details{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: rgba(111, 111, 111, 0.2) 0px 2px 8px 0px;
-    margin-bottom: 15px;
-    background-color: #334155;
-    color: rgb(201, 198, 198);
-}
-.profile_orders .event_name_image{
-    width: fit-content;
-    /* border: 1px solid green; */
-    display: flex;
-    align-items: start;
-    gap: 5px;
-    padding: 5px;
-}
-
-.profile_orders .title{
-    text-align: start;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: rgb(217, 217, 217);
-}
-.profile_orders .genre{
-    color: #757575;
-    letter-spacing: 1px;
-    text-align: start;
-    font-size: small;
-}
-.profile_orders .event_price{
-    width: fit-content;
-    /* border: 1px solid green; */
-}
-.profile_orders .event_price p{
-   display: flex;
-   align-items: center;
-   padding: 5px;
-}
-.profile_orders .event_date{
-    /* border: 1px solid green; */
-    width: fit-content;
-    padding: 5px;
-}
-
 
 @media only screen and (max-width: 576px) {
-    .profile_orders{
-        width: 100%;
-    }
-}
-@media only screen and (min-width:576px) and  (max-width: 768px) {
-    .profile_orders{
-        width: 90%;
-    }
-    
-    .profile_orders .title{
-        font-size: 14px;
-    }
+   .profile_orders{
+       width: 60%;
+   }
 }
 
+@media only screen and (min-width:576px) and  (max-width: 768px) {
+   .profile_orders{
+       width: 60%;
+   }
+}
 @media only screen and (min-width:768px) and  (max-width: 992px) {
-    .profile_orders{
-        width: 90%;
-    }
+   .profile_orders{
+       width: 60%;
+   }
 }

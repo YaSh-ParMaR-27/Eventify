@@ -1,0 +1,48 @@
+.adminContact_container .adminContact_head{
+    background-color: aliceblue;
+    padding: 15px;
+}
+.adminContact_container .adminContact_head h2{
+    font-size: large;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.adminContact_container .Msg_details_row{
+    
+    margin: 3%;
+    height: 80vh;
+    overflow-x: auto;
+    overflow-y: auto;
+
+}
+
+.adminContact_container #Msg_details{
+    /* border-collapse: collapse; */
+    width: 100%;
+    height: fit-content;
+  
+}
+.adminContact_container #Msg_details th,td{
+     /* border: 1px solid black; */
+     padding: 15px;
+}
+
+
+
+.adminContact_container #Msg_details tr:nth-child(even){background-color: aliceblue;}
+
+.adminContact_container #Msg_details tr:hover {
+    background-color: rgb(96, 96, 96);
+    color: white;
+}
+
+.adminContact_container #Msg_details th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  background-color: #262928;
+  color: white;
+  font-weight: normal;
+  letter-spacing: 2px;
+}

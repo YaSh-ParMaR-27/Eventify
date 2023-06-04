@@ -56,7 +56,7 @@ export default function Footer() {
                     <h3 className='text-2xl font-medium'>Browse</h3>
                     <span><Link to="/movies" className='footer__links'>Recommended Movies</Link></span>
                     <span><Link to="/movies" className='footer__links'>Coming Soon</Link></span>
-                    <span><Link to="/movies" className='footer__links'>Events</Link></span>
+                    <span><Link to="/events" className='footer__links'>Events</Link></span>
                 </div>
 
                 <div className="col sm:col-3 flex flex-col">

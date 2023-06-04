@@ -22,9 +22,9 @@ export default function Login() {
       body: JSON.stringify({ email, password }),
     });
 
-    const data = await res.json();
+    // const data = await res.json();
 
-    if (data.status === 400 || !data) {
+    if (res.status === 401 || !res) {
       window.alert("Invalid Credentials!!");
     } else {
 

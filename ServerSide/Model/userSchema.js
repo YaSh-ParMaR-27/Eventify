@@ -33,6 +33,37 @@ const userSchema = new mongoose.Schema({
         }
     ]
 })
+//schema for admin registration
+const adminSchema = new mongoose.Schema({
+    name:{
+        type : String,
+        required : true
+    },
+    email:{
+        type : String,
+        required : true
+    },
+    securityKey:{
+        type:String,
+        required:true,
+    },
+    password:{
+        type : String,
+        required : true
+    },
+    date:{
+        type:Date,
+        default:Date.now
+    },
+    tokens : [
+        {
+            token:{
+                type : String,
+                required : true
+            }
+        }
+    ]
+})
 
 
 //scchema for Contact form
@@ -105,7 +136,7 @@ const eventSchema = new mongoose.Schema({
     Img : {
         data:Buffer,
         type:String,
-        required : true
+       
     },
     about:{
         type:String,
@@ -125,7 +156,7 @@ userSchema.pre('save',async function(next){
     next();
 })
 
-//Generating token
+//Generating token for user
 userSchema.methods.generateAuthToken = async function(){
     try{
         let jwtToken = jwt.sign({ _id : this._id} , process.env.SECRET_KEY);
@@ -141,9 +172,10 @@ userSchema.methods.generateAuthToken = async function(){
 
 //collection creation
 const RegisteredUserData = mongoose.model('Registration',userSchema);
+const RegisteredAdminData = mongoose.model('Admin',adminSchema);
 const ContactUserData = mongoose.model('Contact',contactUsUserSchema);
 const EventData = mongoose.model('Event',eventSchema);
 
 
-module.exports = {RegisteredUserData,ContactUserData,EventData};
+module.exports = {RegisteredUserData,ContactUserData,EventData,RegisteredAdminData};
 
